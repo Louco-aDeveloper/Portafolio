@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiTOOLS</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPDF/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html-docx-js/0.6.0/html-docx.min.js"></script>
+    
+</head>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<body>
+    <header>
+        <!-- Título y logo -->
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo.png" alt="Logo" id="logo">
+            </div>
+            <h1>MultiTOOLS</h1>
+        </div>
+    
+        <!-- Barra de búsqueda -->
+        <div id="search-container">
+            <div id="search-bar-container">
+                <span id="search-icon" onclick="toggleSearch()">🔍</span>
+                <input type="text" id="search-bar" placeholder="Buscar herramienta..." onkeyup="searchTools()">
+            </div>
+        </div>
+        
+        <!-- Botones de Login, Register y Olvidé mi Contraseña -->
+        <div id="button-container">
+            <button id="login-button" onclick="redirectTo('login.html')">Login</button>
+            <button id="register-button" onclick="redirectTo('register.html')">Register</button>
+            <button id="forgot-password-button" onclick="redirectTo('forgot-password.html')">Olvidé mi Contraseña</button>
+        </div>
+    </header>
+
+
+    <div class="tools-container">
+        <!-- Traductor -->
+        <div class="tool">
+            <div class="tool-icon">🌍</div>
+            <h2>Traductor Universal</h2>
+            <input type="text" id="input-text" placeholder="Ingresa el texto" />
+            <select id="source-language">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+                <option value="fr">Francés</option>
+                <option value="de">Alemán</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Portugués</option>
+                <option value="ru">Ruso</option>
+                <option value="zh">Chino</option>
+                <option value="ja">Japonés</option>
+                <option value="ar">Árabe</option>
+            </select>
+            <select id="target-language">
+                <option value="en">Inglés</option>
+                <option value="es">Español</option>
+                <option value="fr">Francés</option>
+                <option value="de">Alemán</option>
+                <option value="it">Italiano</option>
+                <option value="pt">Portugués</option>
+                <option value="ru">Ruso</option>
+                <option value="zh">Chino</option>
+                <option value="ja">Japonés</option>
+                <option value="ar">Árabe</option>
+            </select>
+            <button id="translate-btn">Traducir</button>
+            <div id="translated-text" class="output"></div>
+        </div>
+
+        <!-- Calculadora Ponderada -->
+        <div class="tool">
+            <div class="tool-icon">📊</div>
+            <h2>Calculadora Ponderada</h2>
+            <input type="number" id="nota" placeholder="Introduce la nota" />
+            <input type="number" id="porcentaje" placeholder="Introduce el porcentaje" />
+            <button id="add-note-btn">Agregar Nota</button>
+            <div id="added-notes" class="output"></div>
+            <button id="calculate-btn">Calcular Promedio</button>
+            <div id="average-result" class="output"></div>
+        </div>
+
+        <!-- Conversor de Divisas -->
+        <div class="tool">
+            <div class="tool-icon">💰</div>
+            <h2>Conversor de Divisas</h2>
+            <input type="number" id="amount" placeholder="Monto a convertir" />
+            <select id="currency-from">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="JPY">JPY</option>
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="MXN">MXN</option>
+            </select>
+            <select id="currency-to">
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="JPY">JPY</option>
+                <option value="GBP">GBP</option>
+                <option value="AUD">AUD</option>
+                <option value="MXN">MXN</option>
+            </select>
+            <button id="convert-btn">Convertir</button>
+            <div id="converted-amount" class="output"></div>
+        </div>
+
+        <!-- Calculadora IMC -->
+        <div class="tool">
+            <div class="tool-icon">⚖️</div>
+            <h2>Calculadora IMC</h2>
+            <input type="number" id="weight" placeholder="Introduce tu peso (kg)" />
+            <input type="number" id="height" placeholder="Introduce tu altura (m)" />
+            <button id="calculate-imc-btn">Calcular IMC</button>
+            <div id="imc-result" class="output"></div>
+        </div>
+
+        <!-- Nueva Herramienta: Conversor de Temperatura -->
+        <div class="tool">
+            <div class="tool-icon">🌡️</div>
+            <h2>Conversor de Temperatura</h2>
+            <input type="number" id="temperature" placeholder="Introduce la temperatura" />
+            <select id="temp-from">
+                <option value="Celsius">Celsius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+            <select id="temp-to">
+                <option value="Celsius">Celsius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+            <button id="convert-temp-btn">Convertir Temperatura</button>
+            <div id="temp-result" class="output"></div>
+        </div>
+
+        <!-- Nueva Herramienta: Generador de Contraseñas -->
+        <div class="tool">
+            <div class="tool-icon">🔑</div>
+            <h2>Generador de Contraseñas</h2>
+            <input type="number" id="password-length" placeholder="Longitud de la contraseña" />
+            <button id="generate-password-btn">Generar Contraseña</button>
+            <div id="password-result" class="output"></div>
+        </div>
+
+        <!-- Nueva Herramienta: Calculadora de Intereses -->
+        <div class="tool">
+            <div class="tool-icon">💸</div>
+            <h2>Calculadora de Intereses</h2>
+            <input type="number" id="principal" placeholder="Capital inicial" />
+            <input type="number" id="rate" placeholder="Tasa de interés (%)" />
+            <input type="number" id="time" placeholder="Tiempo (años)" />
+            <button id="calculate-interest-btn">Calcular Intereses</button>
+            <div id="interest-result" class="output"></div>
+        </div>
+
+        <!-- Nueva Herramienta: Planificador de Tareas -->
+        <div class="tool">
+            <div class="tool-icon">📝</div>
+            <h2>Planificador de Tareas</h2>
+            <input type="text" id="task-name" placeholder="Nombre de la tarea" />
+            <input type="date" id="due-date" placeholder="Fecha de vencimiento" />
+            <textarea id="task-description" placeholder="Descripción de la tarea"></textarea>
+            <button id="add-task-btn">Agregar Tarea</button>
+            <div id="task-list" class="output"></div>
+        </div>
+
+        <!-- Nueva Herramienta: Conversor de Peso -->
+        <div class="tool">
+            <div class="tool-icon">⚖️</div>
+            <h2>Conversor de Peso</h2>
+            <input type="number" id="weight-converter" placeholder="Introduce el peso" />
+            <select id="weight-from">
+                <option value="kg">Kilogramos</option>
+                <option value="lb">Libras</option>
+                <option value="oz">Onzas</option>
+            </select>
+            <select id="weight-to">
+                <option value="kg">Kilogramos</option>
+                <option value="lb">Libras</option>
+                <option value="oz">Onzas</option>
+            </select>
+            <button id="convert-weight-btn">Convertir Peso</button>
+            <div id="converted-weight" class="output"></div>
+        </div>
+
+        <!-- Nueva Herramienta: Temporizador de Estudio -->
+        <div class="tool">
+            <div class="tool-icon">⏲️</div>
+            <h2>Temporizador de Estudio</h2>
+            <input type="number" id="study-time" placeholder="Tiempo de estudio (min)" />
+            <button id="start-timer-btn">Iniciar Temporizador</button>
+            <div id="timer-display" class="output"></div>
+        </div>
+
+        <!-- Nueva Herramienta: Conversor de Unidades de Distancia -->
+        <div class="tool">
+            <div class="tool-icon">📏</div>
+            <h2>Conversor de Distancia</h2>
+            <input type="number" id="distance" placeholder="Introduce la distancia" />
+            <select id="distance-from">
+                <option value="km">Kilómetros</option>
+                <option value="m">Metros</option>
+                <option value="mi">Millas</option>
+                <option value="yd">Yardas</option>
+                <option value="ft">Pies</option>
+            </select>
+            <select id="distance-to">
+                <option value="km">Kilómetros</option>
+                <option value="m">Metros</option>
+                <option value="mi">Millas</option>
+                <option value="yd">Yardas</option>
+                <option value="ft">Pies</option>
+            </select>
+            <button id="convert-distance-btn">Convertir Distancia</button>
+            <div id="distance-result" class="output"></div>
+        </div>
+<!-- Nueva Herramienta: Calculadora de Área -->
+<div class="tool">
+    <div class="tool-icon">📐</div>
+    <h2>Calculadora de Área</h2>
+    <select id="shape">
+        <option value="square">Cuadrado</option>
+        <option value="rectangle">Rectángulo</option>
+        <option value="circle">Círculo</option>
+    </select>
+    <input type="number" id="length" placeholder="Largo" />
+    <input type="number" id="width" placeholder="Ancho" />
+    <input type="number" id="radius" placeholder="Radio" />
+    <button id="calculate-area-btn">Calcular Área</button>
+    <div id="area-result" class="output"></div>
+</div>
+<!-- Convertidor de Imagen -->
+<div class="tool">
+    <div class="tool-icon">🖼️</div>
+    <h2>Convertidor de Imágenes</h2>
+    <input type="file" id="image-upload" accept="image/*" />
+    <select id="image-format">
+        <option value="jpg">JPG</option>
+        <option value="png">PNG</option>
+        <option value="gif">GIF</option>
+        <option value="bmp">BMP</option>
+    </select>
+    <button id="convert-image-btn">Convertir Imagen</button>
+    <div id="image-conversion-result"></div>
+</div>
+
+<!-- Convertidor de Documento -->
+<div class="tool">
+    <div class="tool-icon">📑</div>
+    <h2>Convertidor de Documentos</h2>
+    <input type="file" id="document-upload" accept=".docx,.txt,.pdf,.odt" />
+    <select id="document-format">
+        <option value="pdf">PDF</option>
+        <option value="txt">TXT</option>
+        <option value="docx">DOCX</option>
+        <option value="odt">ODT</option>
+    </select>
+    <button id="convert-document-btn">Convertir Documento</button>
+    <div id="document-conversion-result"></div>
+</div>
+<!-- Conversor de Tiempo -->
+<div class="tool">
+    <div class="tool-icon">⏳</div>
+    <h2>Conversor de Tiempo</h2>
+    
+    <!-- Entrada de valor de tiempo -->
+    <input type="number" id="time-value" placeholder="Introduce el tiempo" />
+    
+    <!-- Selector para la unidad de tiempo de origen -->
+    <select id="time-from">
+        <option value="seconds">Segundos</option>
+        <option value="minutes">Minutos</option>
+        <option value="hours">Horas</option>
+        <option value="days">Días</option>
+    </select>
+    
+    <!-- Selector para la unidad de tiempo de destino -->
+    <select id="time-to">
+        <option value="seconds">Segundos</option>
+        <option value="minutes">Minutos</option>
+        <option value="hours">Horas</option>
+        <option value="days">Días</option>
+    </select>
+    
+    <!-- Botón para realizar la conversión -->
+    <button id="convert-time-btn">Convertir Tiempo</button>
+    
+    <!-- Área para mostrar el resultado de la conversión -->
+    <div id="time-result" class="output"></div>
+</div>
+
+        <!-- Nueva Herramienta: Conversor de Velocidad -->
+        <div class="tool">
+            <div class="tool-icon">🚗</div>
+            <h2>Conversor de Velocidad</h2>
+            <input type="number" id="speed" placeholder="Introduce la velocidad" />
+            <select id="speed-from">
+                <option value="km/h">Kilómetros por hora</option>
+                <option value="m/s">Metros por segundo</option>
+                <option value="mph">Millas por hora</option>
+            </select>
+            <select id="speed-to">
+                <option value="km/h">Kilómetros por hora</option>
+                <option value="m/s">Metros por segundo</option>
+                <option value="mph">Millas por hora</option>
+            </select>
+            <button id="convert-speed-btn">Convertir Velocidad</button>
+            <div id="speed-result" class="output"></div>
+        </div>
+    </div>
+</body>
+</html>
+  
+
+
+
+<script src="script.js"></script>
+
+    <footer>
+        <p>&copy; MultiTOOLS</p>
+    </footer>
+
+</body>
+</html>

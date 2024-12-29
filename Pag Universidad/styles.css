@@ -1,0 +1,261 @@
+/* Fuente y color de fondo general */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #1c1c1c;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    overflow: auto;
+    transition: all 0.3s ease;
+}
+
+/* Header con gradiente y sombra */
+header {
+    width: 100%;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+}
+
+/* Título del header con texto animado */
+header h1 {
+    font-size: 2.5rem; /* Reducido */
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Sombra más sutil */
+    animation: textGlow 1.5s ease-out infinite alternate;
+}
+
+/* Animación de resplandor para el título */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    }
+    to {
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 8px #00c6ff;
+    }
+}
+
+/* Contenedor de herramientas con un estilo de grid moderno */
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Más compacto */
+    gap: 30px;
+    padding: 40px 20px; /* Menos relleno */
+    width: 100%;
+    max-width: 1100px;
+    margin-top: 30px; /* Menor margen superior */
+}
+
+/* Estilo de cada herramienta */
+.tool {
+    background: #2a2a2a;
+    border-radius: 15px; /* Menos redondeo */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4); /* Menos sombra */
+    padding: 30px;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tool:hover {
+    background: #333;
+    transform: scale(1.05);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.6);
+}
+
+/* Títulos de herramientas con color llamativo */
+.tool h2 {
+    font-size: 1.6rem; /* Reducido */
+    margin-bottom: 15px;
+    color: #00c6ff;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Efecto hover para títulos de herramientas */
+.tool:hover h2 {
+    color: #0072ff;
+    transform: translateY(-4px);
+}
+
+/* Botón con transición suave y bordes redondeados */
+.tool button {
+    background: #00c6ff;
+    color: #fff;
+    border: none;
+    padding: 12px 20px; /* Ajustado */
+    font-size: 1.2rem; /* Reducido */
+    border-radius: 20px; /* Menos redondeo */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.2s ease;
+    width: 100%;
+    margin-top: 15px; /* Menor espacio */
+    letter-spacing: 1px;
+}
+
+.tool button:hover {
+    background: #0072ff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Salida de la herramienta */
+.output {
+    margin-top: 15px; /* Menos margen */
+    font-size: 1.2rem; /* Reducido */
+    color: #f39c12;
+    font-weight: 500;
+}
+
+/* Footer fijo con sombra */
+footer {
+    width: 100%;
+    padding: 30px 20px; /* Menos relleno */
+    background: #1e1e1e;
+    text-align: center;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -5px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Texto del footer */
+footer p {
+    margin: 0;
+    font-size: 1rem; /* Reducido */
+}
+
+/* Íconos de herramientas con animación */
+.tool-icon {
+    font-size: 3.5rem; /* Más pequeño */
+    color: #00c6ff;
+    margin-bottom: 15px; /* Menor espacio */
+}
+
+/* Efecto hover en los íconos */
+.tool:hover .tool-icon {
+    color: #0072ff;
+    transform: translateY(-8px);
+}
+
+/* Barra de búsqueda con transiciones suaves */
+#search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* Menor margen superior */
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+#search-bar-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Más estrecho */
+    display: flex;
+    align-items: center;
+    background-color: #222;
+    border-radius: 40px; /* Bordes más redondeados */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Menos sombra */
+    padding: 10px 18px; /* Menos espacio */
+}
+
+#search-bar-container:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+#search-icon {
+    font-size: 1.4rem; /* Reducido */
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    margin-right: 12px;
+}
+
+#search-icon:hover {
+    color: #4CAF50;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px 12px; /* Ajustado */
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px; /* Reducido */
+    color: #ccc;
+    border-radius: 40px;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+#search-bar:focus {
+    width: 100%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para contenedor del logo y título */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px; /* Reducido */
+}
+
+/* Logo y título */
+.logo img {
+    width: 60px; /* Reducido */
+    height: auto;
+    margin-right: 15px; /* Menor espacio */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#button-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+    padding-right: 20px;
+}
+
+#button-container button {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#button-container button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
