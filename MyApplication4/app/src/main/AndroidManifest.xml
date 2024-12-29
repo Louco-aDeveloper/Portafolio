@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false"
+        tools:ignore="DuplicateUsesFeature" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        tools:targetApi="31">
+
+        <!-- Declaración de SplashActivity como la pantalla de bienvenida -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EditRecipeActivity">
+
+        </activity>
+        <!-- Declaración de MainActivity (pantalla de login) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
+        <!-- Declaración de otras actividades -->
+        <activity android:name=".RegisterActivity" android:exported="false" />
+        <activity android:name=".WelcomeActivity" android:exported="true" />
+        <activity android:name=".AddRecipeActivity" android:exported="true" />
+        <activity android:name=".RecipeDetailsActivity" android:exported="true" />
+        <activity android:name=".SavedRecipesActivity" android:exported="true" />
+
+    </application>
+
+    <!-- Permisos de SMS -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS"
+        tools:ignore="ManifestOrder" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+</manifest>

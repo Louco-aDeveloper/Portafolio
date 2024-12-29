@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="white">#FFFFFF</color> <!-- Blanco -->
+    <color name="black">#000000</color> <!-- Negro -->
+    <color name="blue">#2196F3</color> <!-- Azul -->
+
+    <color name="primary_color">#A5AF45</color> <!-- Color primario -->
+    <color name="background_color">#FFFFFF</color> <!-- Color de fondo -->
+    <color name="text_color">#2196F3</color> <!-- Color de texto -->
+    <color name="primary_dark_color">#1976D2</color> <!-- Azul oscuro -->
+    <color name="accent_color">#FF4081</color> <!-- Color de acento -->
+    <color name="primary_text">#FF4081</color> <!-- Color de acento -->
+    <color name="secondary_text">#FF4081</color> <!-- Color secundario -->
+    <color name="preparacionEditText">#009688</color>
+    <!-- res/values/colors.xml -->
+    <color name="switch_track_on">#FF7043</color> <!-- Naranja claro -->
+    <color name="switch_track_off">#BDBDBD</color> <!-- Gris -->
+
+    <!-- res/values/colors.xml -->
+    <color name="switch_thumb_on">#FF5722</color> <!-- Naranja oscuro -->
+    <color name="switch_thumb_off">#9E9E9E</color> <!-- Gris oscuro -->
+
+</resources>

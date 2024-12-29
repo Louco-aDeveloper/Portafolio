@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recipe_title" type="id" />
+    <item name="recipe_ingredients" type="id" />
+    <item name="recipe_preparation_time" type="id" />
+    <item name="recipe_rating" type="id" />
+    <item name="recipe_image" type="id" />
+    <item name="recipe_name_text_view" type="id" />
+</resources>

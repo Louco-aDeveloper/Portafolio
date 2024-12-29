@@ -1,0 +1,123 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/fondo_recetas">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="76dp"
+        android:layout_height="59dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/icon_add_recipes" />
+
+    <TextView
+        android:id="@+id/recetas_destacadas_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recetas Destacadas"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center" />
+
+    <Spinner
+        android:id="@+id/recetas_destacadas_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/categoria_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Categoría"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center" />
+
+    <Spinner
+        android:id="@+id/categoria_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/ingredientes_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingredientes"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/ingredientesEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Escribe los ingredientes aquí"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        android:textColorHint="#466865" />
+
+    <TextView
+        android:id="@+id/preparacion_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Preparación"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/preparacionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Escribe los pasos de la preparación"
+        android:inputType="textMultiLine"
+        android:minHeight="48dp"
+        android:textColorHint="#466865" />
+
+    <TextView
+        android:id="@+id/coccion_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiempo de Cocción"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/coccionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Escribe el tiempo de cocción"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#466865" />
+
+    <Button
+        android:id="@+id/btnAddRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agregar Receta"
+        android:layout_marginTop="16dp" />
+
+    <Button
+        android:id="@+id/btnViewSavedRecipes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ver Recetas Guardadas"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

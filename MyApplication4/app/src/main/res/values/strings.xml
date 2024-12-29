@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RecetasFast</string> <!-- Nombre de la aplicación -->
+    <string name="welcome_message">Bienvenido a Recetas!</string>
+    <string name="login_failed">Credenciales incorrectas</string>
+    <string name="remember_me">Recordar sesión</string>
+    <string name="username_hint">Ingrese su nombre de usuario</string>
+    <string name="password_hint">Ingrese su contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="login_title">Inicio de Sesión</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="logo_description">Descripción de tu logo aquí</string>
+    <!-- Nuevos textos añadidos -->
+    <string name="cart_icon">Ícono del carrito</string>
+    <string name="recetas_destacadas_label">Recetas Destacadas</string>
+    <string name="categoria_label">Categoría</string>
+    <string name="receta_seleccionada">Receta Seleccionada</string>
+    <string name="aqu_va_el_tiempo_de_cocci_n">Aquí va el tiempo de cocción...</string>
+    <string name="preparaci_n">Preparación</string>
+    <string name="aqu_van_los_ingredientes">Aquí van los ingredientes...</string>
+    <string name="aqu_va_la_preparaci_n">Aquí va la preparación...</string>
+    <string name="ingredientes">Ingredientes</string>
+    <string name="tiempo_de_cocci_n">Tiempo de Cocción</string>
+    <string name="valoraci_n">Valoración</string>
+    <string name="escribe_los_detalles_de_la_receta_aqu">Escribe los detalles de la receta aquí</string>
+    <string name="register_button" />
+    <string name="register" />
+    <string name="nombre_de_la_receta">Nombre de la receta</string>
+    <string name="ingredientess">Ingredientes: ...</string>
+    <string name="tiempo_de_cocci_n_30_min">Tiempo de cocción: 30 min</string>
+
+    <!-- Arreglos de categorías -->
+    <string-array name="categoria_array">
+        <item>Entrante</item>
+        <item>Plato Principal</item>
+        <item>Postre</item>
+    </string-array>
+
+    <!-- Arreglo de recetas -->
+    <string-array name="recetas_destacadas_array">
+        <item>Empanada</item>
+        <item>Ensalada César</item>
+        <item>Spaghetti Bolognesa</item>
+        <item>Tacos al Pastor</item>
+        <item>Pollo al Curry</item>
+    </string-array>
+</resources>

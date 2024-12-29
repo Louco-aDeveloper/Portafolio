@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Nombre de la receta -->
+    <TextView
+        android:id="@+id/receta_seleccionada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Receta seleccionada"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <!-- Ingredientes -->
+    <TextView
+        android:id="@+id/ingredientes_detalles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingredientes:"
+        android:textSize="16sp"/>
+
+    <!-- Preparación -->
+    <TextView
+        android:id="@+id/preparacion_detalles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Preparación:"
+        android:textSize="16sp"/>
+
+    <!-- Tiempo de cocción -->
+    <TextView
+        android:id="@+id/tiempo_coccion_detalles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tiempo de Cocción:"
+        android:textSize="16sp"/>
+
+    <!-- RatingBar para mostrar la valoración -->
+    <RatingBar
+        android:id="@+id/valoracion_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="0.5"
+        android:isIndicator="true"
+        android:layout_marginTop="16dp" />
+</LinearLayout>

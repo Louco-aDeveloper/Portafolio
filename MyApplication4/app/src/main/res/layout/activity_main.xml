@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="@drawable/fondo_login"
+    tools:ignore="UseSwitchCompatOrMaterialXml">
+
+    <!-- Logo de usuario -->
+    <!-- Removí el Ignore de ContentDescription -->
+
+    <!-- Caja de texto para usuario -->
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/acceso" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/username_hint"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <!-- Caja de texto para contraseña -->
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        tools:ignore="VisualLintTextFieldSize" />
+
+    <!-- Switch para recordar inicio de sesión -->
+    <Switch
+        android:id="@+id/rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:minHeight="48dp"
+        android:text="@string/remember_me"
+        android:textColor="#212121" />
+
+
+    <!-- Botón de inicio de sesión -->
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primary_color"
+        android:text="@string/login_button"
+        android:textColor="#212121" />
+
+    <!-- Botón de registro -->
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="76dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/primary_color"
+        android:contentDescription="@string/register"
+        android:text="Registrarse"
+        android:textColor="#212121"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+</LinearLayout>

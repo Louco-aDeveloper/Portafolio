@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_recetas"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Nombre de la receta"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/categoryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Categoría"
+        android:background="@drawable/rounded_edittext"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/ingredientsEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@drawable/rounded_edittext"
+        android:hint="Ingredientes"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/preparationEditText"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext"
+        android:layout_height="wrap_content"
+        android:hint="Preparación"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/cookingTimeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Tiempo de cocción"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar" />
+</LinearLayout>
